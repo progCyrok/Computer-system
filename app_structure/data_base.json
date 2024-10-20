@@ -1,0 +1,276 @@
+[
+  {
+    "inventory number": "1",
+    "type of computer": "Notebook",
+    "fabricator": "Apple",
+    "model": "Macbook Air M1",
+    "mac address": "R1-I2-N3-A4-T5-KK",
+    "operating system": "MacOS",
+    "dates": {
+      "commissioning": "10.10.2010",
+      "decommissioning": "10.10.2015"
+    },
+    "photo": "macbook_air_m1.png"
+  },
+  {
+    "inventory number": "2",
+    "type of computer": "PC",
+    "fabricator": "Dell",
+    "model": "OptiPlex 7070",
+    "mac address": "A1-B2-C3-D4-E5-F6",
+    "operating system": "Windows 10 Pro",
+    "dates": {
+      "commissioning": "01.01.2020",
+      "decommissioning": "01.01.2025"
+    },
+    "photo": "optiplex7070.jpeg"
+  },
+  {
+    "inventory number": "3",
+    "type of computer": "Laptop",
+    "fabricator": "Samsung",
+    "model": "Galaxy Tab S8",
+    "mac address": "X1-Y2-Z3-W4-V5-U6",
+    "operating system": "Android",
+    "dates": {
+      "commissioning": "15.03.2023",
+      "decommissioning": "15.03.2028"
+    },
+    "photo": "galaxy_tab_s8.jpeg"
+  },
+  {
+    "inventory number": "4",
+    "type of computer": "Desktop",
+    "fabricator": "HP",
+    "model": "HP EliteDesk 800 G6",
+    "mac address": "Q1-W2-E3-R4-T5-Y6",
+    "operating system": "Windows 11 Pro",
+    "dates": {
+      "commissioning": "20.04.2022",
+      "decommissioning": "20.04.2027"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "5",
+    "type of computer": "Server",
+    "fabricator": "Lenovo",
+    "model": "ThinkSystem SR630",
+    "mac address": "A1-S2-D3-F4-G5-H6",
+    "operating system": "Linux CentOS",
+    "dates": {
+      "commissioning": "05.07.2019",
+      "decommissioning": "05.07.2024"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "6",
+    "type of computer": "Tablet",
+    "fabricator": "Apple",
+    "model": "iPad Pro 12.9",
+    "mac address": "Z1-X2-C3-V4-B5-N6",
+    "operating system": "iPadOS",
+    "dates": {
+      "commissioning": "12.12.2021",
+      "decommissioning": "12.12.2026"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "7",
+    "type of computer": "Laptop",
+    "fabricator": "Lenovo",
+    "model": "ThinkPad X1! Carbon Gen 9",
+    "mac address": "J1-K2-L3-M4-N5-O6",
+    "operating system": "Windows 11 Pro",
+    "dates": {
+      "commissioning": "18.09.2022",
+      "decommissioning": "18.09.2027"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "8",
+    "type of computer": "All-in-one",
+    "fabricator": "Acer",
+    "model": "Aspire C27",
+    "mac address": "P1-Q2-R3-S4-T5-U6",
+    "operating system": "Windows 10 Home",
+    "dates": {
+      "commissioning": "03.05.2021",
+      "decommissioning": "03.05.2026"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "9",
+    "type of computer": "Workstation",
+    "fabricator": "HP",
+    "model": "Z4 G4",
+    "mac address": "F1-G2-H3-J4-K5-L6",
+    "operating system": "Linux Ubuntu",
+    "dates": {
+      "commissioning": "25.11.2020",
+      "decommissioning": "25.11.2025"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "10",
+    "type of computer": "All-in-One",
+    "fabricator": "Acer",
+    "model": "Aspire C27-960",
+    "mac address": "V1-W2-X3-Y4-Z5-A6",
+    "operating system": "Windows 11 Home",
+    "dates": {
+      "commissioning": "12.12.2021",
+      "decommissioning": "12.12.2026"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "11",
+    "type of computer": "Server",
+    "fabricator": "Dell",
+    "model": "PowerEdge R740",
+    "mac address": "B1-C2-D3-E4-F5-G6",
+    "operating system": "Linux",
+    "dates": {
+      "commissioning": "08.08.2020",
+      "decommissioning": "08.08.2025"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "12",
+    "type of computer": "Gaming PC",
+    "fabricator": "Alienware",
+    "model": "Aurora R11",
+    "mac address": "W1-X2-Y3-Z4-A5-B6",
+    "operating system": "Windows 11 Home",
+    "dates": {
+      "commissioning": "22.04.2023",
+      "decommissioning": "22.04.2028"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "13",
+    "type of computer": "Mini PC",
+    "fabricator": "Intel",
+    "model": "NUC11 Enthusiast",
+    "mac address": "C1-D2-E3-F4-G5-H6",
+    "operating system": "Windows 10 Pro",
+    "dates": {
+      "commissioning": "15.06.2022",
+      "decommissioning": "15.06.2027"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "14",
+    "type of computer": "Desktop",
+    "fabricator": "HP",
+    "model": "Pavilion 590",
+    "mac address": "E1-F2-G3-H4-I5-J6",
+    "operating system": "Windows 10 Home",
+    "dates": {
+      "commissioning": "20.05.2019",
+      "decommissioning": "20.05.2024"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "15",
+    "type of computer": "Notebook",
+    "fabricator": "Lenovo",
+    "model": "ThinkPad X1 Carbon",
+    "mac address": "P1-Q2-R3-S4-T5-U6",
+    "operating system": "Windows 10 Pro",
+    "dates": {
+      "commissioning": "05.07.2021",
+      "decommissioning": "05.07.2026"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "16",
+    "type of computer": "Tablet",
+    "fabricator": "Microsoft",
+    "model": "Surface Pro 8",
+    "mac address": "N1-O2-P3-Q4-R5-S6",
+    "operating system": "Windows 11",
+    "dates": {
+      "commissioning": "12.09.2022",
+      "decommissioning": "12.09.2027"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "17",
+    "type of computer": "Gaming PC",
+    "fabricator": "Asus",
+    "model": "ROG Strix GA15",
+    "mac address": "K1-L2-M3-N4-O5-P6",
+    "operating system": "Windows 10 Home",
+    "dates": {
+      "commissioning": "03.11.2020",
+      "decommissioning": "03.11.2025"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "18",
+    "type of computer": "All-in-One",
+    "fabricator": "Acer",
+    "model": "Aspire C27",
+    "mac address": "Z1-Y2-X3-W4-V5-U6",
+    "operating system": "Windows 10 Home",
+    "dates": {
+      "commissioning": "18.01.2021",
+      "decommissioning": "18.01.2026"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "19",
+    "type of computer": "Notebook",
+    "fabricator": "Razer",
+    "model": "Razer Blade 15",
+    "mac address": "T1-U2-V3-W4-X5-Y6",
+    "operating system": "Windows 11",
+    "dates": {
+      "commissioning": "25.02.2022",
+      "decommissioning": "25.02.2027"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "20",
+    "type of computer": "Mini PC",
+    "fabricator": "Intel",
+    "model": "NUC 11",
+    "mac address": "C1-D2-E3-F4-G5-H6",
+    "operating system": "Ubuntu Linux",
+    "dates": {
+      "commissioning": "08.08.2021",
+      "decommissioning": "08.08.2026"
+    },
+    "photo": ""
+  },
+  {
+    "inventory number": "21",
+    "type of computer": "Chromebook",
+    "fabricator": "Google",
+    "model": "Pixelbook Go",
+    "mac address": "A2-B3-C4-D5-E6-F7",
+    "operating system": "Chrome OS",
+    "dates": {
+      "commissioning": "30.06.2020",
+      "decommissioning": "30.06.2025"
+    },
+    "photo": ""
+  }
+
+]

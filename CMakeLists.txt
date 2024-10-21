@@ -10,6 +10,9 @@ set(SOURCE_FILES app_structure/main_window/main.cpp
         app_structure/main_window/main_objects.h
         app_structure/main_window/work_with_json.h
         app_structure/other_func/creating_computer.h
+        app_structure/add_new_computer/monitor_create.h
+        app_structure/add_new_computer/create_objects.h
+        app_structure/main_window/main_monitor.h
 )
 
 

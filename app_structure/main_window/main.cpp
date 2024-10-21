@@ -2,6 +2,8 @@
 #include <fstream>
 #include <string>
 #include <cmath>
+#include <thread>
+#include <chrono>
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
 #include "../../autorization/authorization.h"
@@ -9,6 +11,7 @@
 #include "main_objects.h"
 #include "work_with_json.h"
 #include "../other_func/creating_computer.h"
+#include "../add_new_computer/monitor_create.h"
 
 int main() {
   ComputerDatabase db("/Users/rinatkamalov/CLionProjects/computers/app_structure/data_base.json");
@@ -49,18 +52,22 @@ int main() {
                         sf::Color(0, 255, 127),
                         sf::Color(0, 230, 0),
                         window);
-    std::vector<TextInput_Add_Computer> add_comp_inputs;
-    Button_Add add_button_computer(sf::Vector2f(682.5f, 660.f), sf::Vector2f(100.f, 50.f), sf::Color(173, 255, 47), sf::Color(0, 255, 0));
     while (window.isOpen()) {
       sf::Event event;
       sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(window));
       window.draw(floorSprite);
       main_events(window, event);
       menu_computers(window);
-      update_current(window, add_button_computer, mousePosition, add_comp_inputs, event);
+      update_current(window, mousePosition, event);
       window.draw(text_list);
       default_drawwing_buttons(computer_buttons, computer_texts, mousePosition, window, switch_buttons, switch_texts);
       adding_computers(font_text, main_add, mousePosition, window);
+      if (pressed_add_button == true) {
+        create_computer_monitor();
+        pressed_add_button = false;
+        window.close();
+      }
+
       window.display();
     }
   }

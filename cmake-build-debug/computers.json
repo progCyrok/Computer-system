@@ -274,15 +274,15 @@
     },
     {
         "dates": {
-            "commissioning": "1",
-            "decommissioning": "1"
+            "commissioning": "f34f",
+            "decommissioning": "sfd4"
         },
-        "fabricator": "1",
+        "fabricator": "231",
         "inventory number": "22",
-        "mac address": "1",
-        "model": "Test",
-        "operating system": "1",
+        "mac address": "wer",
+        "model": "34re",
+        "operating system": "wer",
         "photo": "probook_450_g8.jpg",
-        "type of computer": "1"
+        "type of computer": "11"
     }
 ]

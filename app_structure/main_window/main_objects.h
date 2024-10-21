@@ -105,7 +105,7 @@ class Computers_button {
   }
 
   void switch_color() {
-    if (current_button_index == inventory_ && get_current_add_index() != "-1") {
+    if (current_button_index == inventory_) {
       m_shape.setFillColor(m_normalColor);
     } else {
       m_shape.setFillColor(m_pressedColor);
@@ -119,12 +119,10 @@ class Computers_button {
       if (current_button_index != inventory_) {
         current_button_index = "0";
       }
-      update_current_add_button(current_button_index);
       if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
         if (current_button_index != DB.getComputerModel(inventory_)) {
           current_button_index = inventory_;
         }
-        update_current_add_button(current_button_index);
         float scaleFactor = 1.2f;
         m_shape.setSize(m_size * scaleFactor);
         m_shape.setPosition(m_originalPosition - (m_size * (scaleFactor - 1.f) / 2.f));
@@ -227,15 +225,13 @@ class Switch_button {
 
 
 
-void update_current(sf::RenderWindow &window, Button_Add &add_but,
-                    sf::Vector2f &mousePosition, std::vector<TextInput_Add_Computer> &add_comp_inputs,
+void update_current(sf::RenderWindow &window,
+                    sf::Vector2f &mousePosition,
                     sf::Event &event) {
   if (current_button_index > "0") {
     description_computer(window, current_button_index);
   }
-  if (get_current_add_index() == "-1") {
-    add_description_computer(window, add_but, mousePosition, add_comp_inputs, event);
-  }
+
 }
 void menu_computers (sf::RenderWindow &window) {
   sf::RectangleShape menu;
@@ -343,8 +339,4 @@ void default_drawwing_buttons(std::vector<Computers_button> &computer_buttons, s
     switch_buttons[i].draw();
     window.draw(switch_texts[i]);
   }
-}
-
-std::string get_curent_button() {
-  return current_button_index;
 }

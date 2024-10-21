@@ -35,6 +35,28 @@ class ComputerDatabase {
     }
   }
 
+  void record_computer(std::string &inven, std::string &type,
+                       std::string &fab, std::string &model,
+                       std::string &mac, std::string &os,
+                       std::string &comm, std::string &decomm) {
+
+    // Заполняем объект JSON
+    json newComputer = {
+        {"inventory number", inven},
+        {"type of computer", type},
+        {"fabricator", fab},
+        {"model", model},
+        {"mac address", mac},
+        {"operating system", os},
+        {"dates", {{"commissioning", comm}, {"decommissioning", decomm}}},
+        {"photo", "probook_450_g8.jpg"}
+    };
+    std::cout << newComputer << std::endl;
+    data.push_back(newComputer);
+
+    saveToFile();
+  }
+
   json getComputerInfo(const std::string& inventoryNumber) {
     if (data.is_array()) {
       for (const auto& item : data) {
@@ -123,5 +145,6 @@ class ComputerDatabase {
     } else {
       std::cerr << "Ошибка записи в файл: " << filename << std::endl;
     }
+    file.close();
   }
 };

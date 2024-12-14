@@ -19,7 +19,7 @@ int autorization_monitor(){
 
   sf::Text text_log;
   sf::Font font_text;
-  if (!font_text.loadFromFile("../my_tools/fonts/ArialRegular.ttf")) {
+  if (!font_text.loadFromFile("../my_tools/fonts/AristaPro-Regular.ttf")) {
     std::cerr << "Не удалось загрузить шрифт!" << std::endl;
     return -1;
   }

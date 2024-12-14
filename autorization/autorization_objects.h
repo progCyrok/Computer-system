@@ -23,7 +23,7 @@ class Button_Enter {
     m_originalPosition = m_position;
     m_shape.setOutlineThickness(3);
     m_shape.setOutlineColor(sf::Color::Black);
-    if (!font.loadFromFile("../my_tools/fonts/ArialRegular.ttf")) {
+    if (!font.loadFromFile("../my_tools/fonts/AristaPro-Regular.ttf")) {
       std::cerr << "Error loading font" << std::endl;
     }
     text.setFont(font);
@@ -137,7 +137,7 @@ class Button_Enter {
 class TextInput {
  public:
   TextInput(float x, float y, std::string name) {
-    if (!font.loadFromFile("../my_tools/fonts/ArialRegular.ttf")) {
+    if (!font.loadFromFile("../my_tools/fonts/AristaPro-Regular.ttf")) {
       std::cerr << "Error loading font" << std::endl;
     }
 

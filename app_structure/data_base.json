@@ -274,15 +274,67 @@
     },
     {
         "dates": {
-            "commissioning": "1",
-            "decommissioning": "1"
+            "commissioning": "ds",
+            "decommissioning": "sec"
         },
-        "fabricator": "1",
+        "fabricator": "RF",
         "inventory number": "22",
-        "mac address": "1",
-        "model": "Test",
-        "operating system": "1",
-        "photo": "probook_450_g8.jpg",
-        "type of computer": "1"
+        "mac address": "vnsvns",
+        "model": "Papus",
+        "operating system": "RF",
+        "photo": "test_computer.jpeg",
+        "type of computer": "Papus"
+    },
+    {
+        "dates": {
+            "commissioning": "ds",
+            "decommissioning": "sec"
+        },
+        "fabricator": "RF3",
+        "inventory number": "22",
+        "mac address": "vnsvns",
+        "model": "Papus",
+        "operating system": "RF",
+        "photo": "test_computer.jpeg",
+        "type of computer": "Papus"
+    },
+    {
+        "dates": {
+            "commissioning": "ds",
+            "decommissioning": "sec"
+        },
+        "fabricator": "RF3",
+        "inventory number": "22",
+        "mac address": "vnsv3ns",
+        "model": "Pap3us",
+        "operating system": "RF",
+        "photo": "test_computer.jpeg",
+        "type of computer": "Papus"
+    },
+    {
+        "dates": {
+            "commissioning": "wefwfewfe",
+            "decommissioning": "wefwewfe"
+        },
+        "fabricator": "fewwefwef",
+        "inventory number": "25",
+        "mac address": "wefwfewefwef",
+        "model": "wfeewfewf",
+        "operating system": "wefwefwef",
+        "photo": "wefwefwefwfewfe",
+        "type of computer": "werfewf"
+    },
+    {
+        "dates": {
+            "commissioning": "dfs",
+            "decommissioning": "dsfsd"
+        },
+        "fabricator": "fds",
+        "inventory number": "26",
+        "mac address": "sdf",
+        "model": "sdf",
+        "operating system": "dsf",
+        "photo": "dfssdf",
+        "type of computer": "ruslan"
     }
 ]

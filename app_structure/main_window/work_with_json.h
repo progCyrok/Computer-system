@@ -10,7 +10,6 @@ class ComputerDatabase {
     loadFromFile();
   }
 
-
   std::string printModelByIndex(int index) {
     if (data.is_array() && index >= 0 && index < data.size()) {
       return data[index]["model"];
@@ -38,9 +37,9 @@ class ComputerDatabase {
   void record_computer(std::string &inven, std::string &type,
                        std::string &fab, std::string &model,
                        std::string &mac, std::string &os,
-                       std::string &comm, std::string &decomm) {
+                       std::string &comm, std::string &decomm,
+                       std::string &photo) {
 
-    // Заполняем объект JSON
     json newComputer = {
         {"inventory number", inven},
         {"type of computer", type},
@@ -49,7 +48,7 @@ class ComputerDatabase {
         {"mac address", mac},
         {"operating system", os},
         {"dates", {{"commissioning", comm}, {"decommissioning", decomm}}},
-        {"photo", "probook_450_g8.jpg"}
+        {"photo", photo}
     };
     std::cout << newComputer << std::endl;
     data.push_back(newComputer);
@@ -137,7 +136,6 @@ class ComputerDatabase {
       std::cerr << "Ошибка открытия файла: " << filename << std::endl;
     }
   }
-
   void saveToFile() {
     std::ofstream file(filename);
     if (file.is_open()) {

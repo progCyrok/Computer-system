@@ -11,7 +11,6 @@ int create_computer_monitor() {
   if (pressed_add_button == true) {
     int width = 600, height = 700;
     sf::RenderWindow window(sf::VideoMode(width, height), "Create_New_Element");
-    // Загружаем изображение для курсора
     sf::Image cursorImage;
     if (!cursorImage.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/images/mini_cursor.png")) {
       std::cerr << "Ошибка загрузки изображения курсора!" << std::endl;
@@ -20,16 +19,16 @@ int create_computer_monitor() {
 
     sf::Text text_log;
     sf::Font font_text;
-    if (!font_text.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/fonts/ArialRegular.ttf")) {
+    if (!font_text.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/fonts/AristaPro-Regular.ttf")) {
       std::cerr << "Не удалось загрузить шрифт!" << std::endl;
       return -1;
     }
 
     text_log.setFont(font_text);
-    text_log.setString("Please log in to the system");
-    text_log.setCharacterSize(30);
-    text_log.setFillColor(sf::Color::Blue);
-    text_log.setPosition(120, 50);
+    text_log.setString("Fill in all the fields");
+    text_log.setCharacterSize(35);
+    text_log.setFillColor(sf::Color(0, 90, 155));
+    text_log.setPosition(170, 70);
 
     sf::Text text_incorrect;
     text_incorrect.setFont(font_text);
@@ -43,14 +42,13 @@ int create_computer_monitor() {
     window.setMouseCursor(custom_cursor);
     sf::Font font;
     sf::Texture floorTexture;
-    if (!floorTexture.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/images/black_blue.jpg")) {
+    if (!floorTexture.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/images/backgrounds/create_back.jpg")) {
       std::cerr << "Фото не поддерживается";
     }
     sf::Sprite floorSprite(floorTexture);
     sf::Event event;
-
-    Create_Button_Enter button(sf::Vector2f(250.f, 550.f), sf::Vector2f(100.f, 40.f),
-                        sf::Color(30, 144, 255), sf::Color(sf::Color::Blue));
+    Create_Button_Enter button(sf::Vector2f(250.f, 650.f), sf::Vector2f(100.f, 40.f),
+                        sf::Color(30, 144, 255), sf::Color(0, 239, 255));
 
     Create_TextInput inputField1(50, 150, "Inventory Number");
     Create_TextInput inputField2(50, 200, "Type of Computer");
@@ -60,6 +58,9 @@ int create_computer_monitor() {
     Create_TextInput inputField6(50, 400, "Operating system");
     Create_TextInput inputField7(50, 450, "Commissioning");
     Create_TextInput inputField8(50, 500, "Decommissioning");
+    Create_TextInput inputField9(50, 550, "Name Photo");
+
+    Add_photo_computer_button add_photo(190, 600);
 
     while (window.isOpen()) {
       while (window.pollEvent(event)) {
@@ -85,6 +86,7 @@ int create_computer_monitor() {
         inputField6.handleEvent(event);
         inputField7.handleEvent(event);
         inputField8.handleEvent(event);
+        inputField9.handleEvent(event);
 
         button.setInputText(inputField1.getInputText(), "Inventory Number");
         button.setInputText(inputField2.getInputText(), "Type of Computer");
@@ -94,6 +96,8 @@ int create_computer_monitor() {
         button.setInputText(inputField6.getInputText(), "Operating system");
         button.setInputText(inputField7.getInputText(), "Commissioning");
         button.setInputText(inputField8.getInputText(), "Decommissioning");
+        button.setInputText(inputField9.getInputText(), "Name Photo");
+
 
         inputField1.draw(window);
         inputField2.draw(window);
@@ -103,22 +107,20 @@ int create_computer_monitor() {
         inputField6.draw(window);
         inputField7.draw(window);
         inputField8.draw(window);
+        inputField9.draw(window);
 
-//        inputField1.pressed_enter(event, button);
-//        inputField2.pressed_enter(event, button);
-//        inputField3.pressed_enter(event, button);
-//        inputField4.pressed_enter(event, button);
-//        inputField5.pressed_enter(event, button);
-//        inputField6.pressed_enter(event, button);
-//        inputField7.pressed_enter(event, button);
-//        inputField8.pressed_enter(event, button);
-        if (save == true) {
-          window.close();
-        }
+        add_photo.handleEvent(event);
+        add_photo.draw(window);
+
         window.draw(text_log);
         window.display();
+        if (press_save == true) {
+          window.close();
+          pressed_add_button = false;
+        }
       }
     }
+    press_save = false;
     return 0;
   }
 }

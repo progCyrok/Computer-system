@@ -10,7 +10,6 @@
 #include "../other_func/creating_computer.h"
 
 std::string current_button_index = "0";
-ComputerDatabase DB("/Users/rinatkamalov/CLionProjects/computers/app_structure/data_base.json");
 int list = 1;
 
 void modification_photo(sf::Sprite &computer_photo) {
@@ -35,13 +34,14 @@ void description_computer (sf::RenderWindow & window, std::string &inventory) {
   menu.setOutlineColor(sf::Color::Black);
   sf::Text text_model;
   sf::Font font_text;
-  if (!font_text.loadFromFile("../my_tools/fonts/ArialRegular.ttf")) {
+  if (!font_text.loadFromFile("../my_tools/fonts/AristaPro-Regular.ttf")) {
     std::cerr << "Не удалось загрузить шрифт!" << std::endl;
   }
   text_model.setFont(font_text);
   text_model.setFillColor(sf::Color::Black);
   text_model.setPosition(550.f, 170.f);
-  text_model.setCharacterSize(35);
+  text_model.setCharacterSize(40);
+  ComputerDatabase DB("/Users/rinatkamalov/CLionProjects/computers/app_structure/data_base.json");
   std::string model = DB.getComputerModel(inventory);
   size_t pos = model.find("!");
   if (pos != std::string::npos) {
@@ -54,7 +54,7 @@ void description_computer (sf::RenderWindow & window, std::string &inventory) {
   description.setFont(font_text);
   description.setFillColor(sf::Color::Black);
   description.setPosition(520.f, 230.f);
-  description.setCharacterSize(26);
+  description.setCharacterSize(30);
   description.setString(DB.getComputerInfoByInven(inventory));
   window.draw(menu);
   window.draw(text_model);
@@ -63,7 +63,6 @@ void description_computer (sf::RenderWindow & window, std::string &inventory) {
     sf::Texture texture;
     std::string photo_path = "../my_tools/images/photos_computers/" + DB.getComputerPhoto(inventory);
     if (!texture.loadFromFile(photo_path)) {
-      // Обработка ошибки, если изображение не удалось загрузить
       std::cerr << "Ошибка загрузки изображения!" << std::endl;
     }
     sf::Sprite computer_photo(texture);
@@ -120,6 +119,7 @@ class Computers_button {
         current_button_index = "0";
       }
       if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+        ComputerDatabase DB("/Users/rinatkamalov/CLionProjects/computers/app_structure/data_base.json");
         if (current_button_index != DB.getComputerModel(inventory_)) {
           current_button_index = inventory_;
         }
@@ -235,9 +235,9 @@ void update_current(sf::RenderWindow &window,
 }
 void menu_computers (sf::RenderWindow &window) {
   sf::RectangleShape menu;
-  menu.setSize(sf::Vector2f(400.f, 600.f));
-  menu.setFillColor(sf::Color(190, 240, 255));
-  menu.setPosition(35.f, 125.f);
+  menu.setSize(sf::Vector2f(400.f, 695.f));
+  menu.setFillColor(sf::Color(174, 234, 255));
+  menu.setPosition(35.f, 30.f);
   menu.setOutlineThickness(2);
   menu.setOutlineColor(sf::Color::Black);
   window.draw(menu);
@@ -298,7 +298,7 @@ void default_menu_buttons(ComputerDatabase &db, sf::Font &font_text,
     sf::Text text_button;
     text_button.setFont(font_text);
     text_button.setFillColor(sf::Color::Black);
-    text_button.setPosition(sw_buttonPosition.x + 8, sw_buttonPosition.y - 1);
+    text_button.setPosition(sw_buttonPosition.x + 9, sw_buttonPosition.y - 1);
     text_button.setCharacterSize(24);
     text_button.setString(std::to_string(i));
     switch_texts.push_back(text_button);
@@ -339,4 +339,8 @@ void default_drawwing_buttons(std::vector<Computers_button> &computer_buttons, s
     switch_buttons[i].draw();
     window.draw(switch_texts[i]);
   }
+}
+
+void close_window(sf::RenderWindow &window) {
+  window.close();
 }

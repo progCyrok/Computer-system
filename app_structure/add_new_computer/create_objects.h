@@ -8,10 +8,11 @@
 #include <string>
 #include "../../my_tools/json/include/nlohmann/json.hpp"
 #include "../main_window/work_with_json.h"
+#include <cstdlib>
 
 
 using json = nlohmann::json;
-bool save = false;
+bool press_save = false;
 class Create_Button_Enter {
  public:
   Create_Button_Enter(const sf::Vector2f& position, const sf::Vector2f& size,
@@ -25,12 +26,12 @@ class Create_Button_Enter {
     m_originalPosition = m_position;
     m_shape.setOutlineThickness(3);
     m_shape.setOutlineColor(sf::Color::Black);
-    if (!font.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/fonts/ArialRegular.ttf")) {
+    if (!font.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/fonts/AristaPro-Regular.ttf")) {
       std::cerr << "Error loading font" << std::endl;
     }
     text.setFont(font);
     text.setFillColor(sf::Color::Black);
-    text.setPosition(position.x + 20, position.y + 1);
+    text.setPosition(position.x + 24, position.y + 1);
     text.setCharacterSize(28);
     text.setString("ADD");
   }
@@ -95,6 +96,9 @@ class Create_Button_Enter {
     if (type == "Decommissioning") {
       inputText_decomiss = textInput;
     }
+    if (type == "Name Photo") {
+      inputText_photo = textInput;
+    }
   }
 
   bool get_logon() {
@@ -122,8 +126,8 @@ class Create_Button_Enter {
                              inputText_fabricator,
                              inputText_model, inputText_mac,
                              inputText_os, inputText_comiss,
-                             inputText_decomiss);
-          save = true;
+                             inputText_decomiss, inputText_photo);
+          press_save = true;
         }
       }
     } else {
@@ -152,19 +156,21 @@ class Create_Button_Enter {
   std::string inputText_os;
   std::string inputText_comiss;
   std::string inputText_decomiss;
+  std::string inputText_photo;
 };
+
 
 
 class Create_TextInput {
  public:
   Create_TextInput(float x, float y, std::string name) {
-    if (!font.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/fonts/ArialRegular.ttf")) {
+    if (!font.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/fonts/AristaPro-Regular.ttf")) {
       std::cerr << "Error loading font" << std::endl;
     }
 
     inputBox.setSize(sf::Vector2f(500, 30));
     inputBox.setPosition(x, y);
-    inputBox.setFillColor(sf::Color(70, 130, 180));
+    inputBox.setFillColor(sf::Color(0, 205, 255));
     inputBox.setOutlineColor(sf::Color::Black);
     inputBox.setOutlineThickness(2);
 
@@ -181,7 +187,7 @@ class Create_TextInput {
     else {
       text.setString(slovo);
     }
-    text.setCharacterSize(20);
+    text.setCharacterSize(24);
   }
 
   std::string getInputText() const {
@@ -219,7 +225,7 @@ class Create_TextInput {
           text.setString(inputText);
         }
       } else {
-        inputBox.setFillColor(sf::Color(70, 130, 180));
+        inputBox.setFillColor(sf::Color(0, 205, 255));
         if (inputText.empty()) {
           text.setString(slovo);
         }
@@ -240,4 +246,67 @@ class Create_TextInput {
   bool isSelected = false;
   std::string slovo;
   bool if_inven = false;
+};
+
+class Add_photo_computer_button {
+ public:
+  Add_photo_computer_button(float x, float y) {
+    if (!font.loadFromFile("/Users/rinatkamalov/CLionProjects/computers/my_tools/fonts/AristaPro-Regular.ttf")) {
+      std::cerr << "Error loading font" << std::endl;
+    }
+
+    inputBox.setSize(sf::Vector2f(215, 30));
+    inputBox.setPosition(x, y);
+    inputBox.setFillColor(sf::Color(0, 205, 255));
+    inputBox.setOutlineColor(sf::Color::Black);
+    inputBox.setOutlineThickness(2);
+
+    text.setFont(font);
+    text.setFillColor(sf::Color::Black);
+    text.setPosition(x + 6, y + 1);
+    text.setString("Watch photo computer");
+    text.setCharacterSize(20);
+  }
+
+
+  void handleEvent(const sf::Event& event) {
+    if (event.type == sf::Event::MouseButtonPressed) {
+      if (event.mouseButton.button == sf::Mouse::Left && inputBox.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+        isSelected = true;
+        std::cout << "Photo" << std::endl;
+        system("open /Users/rinatkamalov/CLionProjects/computers/my_tools/images/photos_computers");
+      } else {
+        isSelected = false;
+      }
+    }
+
+    if (isSelected) {
+      inputBox.setFillColor(sf::Color(0, 255, 255));
+      if (event.type == sf::Event::TextEntered) {
+        if (event.text.unicode < 128) {
+          if (event.text.unicode == '\b' && inputText.size() > 0) {
+            inputText.erase(inputText.size() - 1);
+          } else if (event.text.unicode >= 32 && event.text.unicode <= 126) {
+            inputText += static_cast<char>(event.text.unicode);
+          }
+        }
+        text.setString(inputText);
+      }
+    } else {
+      inputBox.setFillColor(sf::Color(0, 205, 255));
+    }
+  }
+
+
+  void draw(sf::RenderWindow& window) {
+    window.draw(inputBox);
+    window.draw(text);
+  }
+
+ private:
+  sf::RectangleShape inputBox;
+  sf::Font font;
+  sf::Text text;
+  std::string inputText;
+  bool isSelected = false;
 };
